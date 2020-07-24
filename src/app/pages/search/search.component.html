@@ -6,4 +6,6 @@
     </div>
 </form>
 
+<ngb-pagination *ngIf="!!totalItems && totalItems > 20" [(page)]="page" [pageSize]="20" [collectionSize]="totalItems" [boundaryLinks]="true" [maxSize]="5">
+</ngb-pagination>
 <ba-book-list [books]="book$ | async"></ba-book-list>

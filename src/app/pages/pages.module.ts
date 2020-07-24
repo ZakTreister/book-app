@@ -6,6 +6,7 @@ import { PagesComponent } from './pages.component';
 import { SearchComponent } from './search/search.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { FormsModule } from '@angular/forms';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     PagesRoutingModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    NgbPaginationModule
   ]
 })
 export class PagesModule { }

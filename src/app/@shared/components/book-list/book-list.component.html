@@ -1,8 +1,8 @@
 <div class="row" *ngIf="!!books">
     <div class="col" *ngIf="!books.length">
-        <h5 >No books found...</h5>
+        <h5>No books found...</h5>
     </div>
     <div class="col-6 col-lg-4 col-xl-3 pb-3" *ngFor="let book of books">
-        <ba-book [auther]="book?.authors" [image]="book?.imageLinks?.smallThumbnail" [title]="book?.title"></ba-book>
+        <ba-book [book]="book"></ba-book>
     </div>
 </div>

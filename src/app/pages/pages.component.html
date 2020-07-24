@@ -10,7 +10,7 @@
     </button>
     <div class="collapse navbar-collapse" [ngClass]="{'show':!!expanded}">
         <ul class="navbar-nav">
-            <li class="nav-item" routerLinkActive="active" *ngFor="let item of navigation">
+            <li class="nav-item" routerLinkActive="active" (click)="toggle()" *ngFor="let item of navigation">
                 <a class="nav-link" [routerLink]="item.navRoute">{{item.title}}</a>
             </li>
             <li class="nav-item">

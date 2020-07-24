@@ -4,13 +4,14 @@ import { BookComponent } from './components/book/book.component';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { SubStrPipe } from './pipes/sub-str.pipe';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
-
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
   declarations: [BookComponent, BookListComponent, SubStrPipe, BookDetailsComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    NgbModalModule
   ],
   exports: [
     BookComponent,

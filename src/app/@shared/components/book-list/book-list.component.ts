@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { VolumeInfo } from '../../models/book';
+import { Book } from '../../models/book';
 
 @Component({
   selector: 'ba-book-list',
@@ -8,7 +8,7 @@ import { VolumeInfo } from '../../models/book';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookListComponent implements OnInit {
-  @Input() books: VolumeInfo[];
+  @Input() books: Book[];
 
   constructor() { }
 

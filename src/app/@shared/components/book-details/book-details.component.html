@@ -1,1 +1,9 @@
-<p>book-details works!</p>
+<div class="modal-header" *ngIf="!!title">
+    <h4>{{title}}</h4>
+</div>
+<div class="modal-body" *ngIf="!!book">
+    <img *ngIf="image" (error)="image=null" [src]="image" alt="" class="m-auto">
+    <ng-container *ngFor="let item of items">
+        <p *ngIf="item.parsedData(book[item.field]) as data" class="mb-2">{{item.prop}}: {{data}}</p>
+    </ng-container>
+</div>

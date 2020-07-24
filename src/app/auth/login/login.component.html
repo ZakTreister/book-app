@@ -1,17 +1,19 @@
-<div class="row justify-content-center align-items-center min-vh-100">
-  <div class="col-12">
-    <div class="text-center">
-      <img src="/assets/my-reader.jpg" alt="" class="img-fluid" />
-    </div>
-    <h1 class="text-center">Welcome to the book app!</h1>
-    <form (ngSubmit)="login()" [formGroup]="gorup">
-      <div class="form-group">
-        <label for="uername">Enter your user name</label>
-        <input type="text" class="form-control form-control-lg" autocomplete="off"
-          [ngClass]="{'is-invalid':!!gorup && !!gorup.touched && !gorup.valid}" id="uername"
-          formControlName="username" />
+<main class="container">
+  <div class="row justify-content-center align-items-center min-vh-100">
+    <div class="col-12">
+      <div class="text-center">
+        <img src="/assets/my-reader.jpg" alt="" class="img-fluid" />
       </div>
-      <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
-    </form>
+      <h1 class="text-center">Welcome to the book app!</h1>
+      <form (ngSubmit)="login()" [formGroup]="gorup">
+        <div class="form-group">
+          <label for="uername">Enter your user name</label>
+          <input #input type="text" class="form-control form-control-lg" autocomplete="off"
+            [ngClass]="{'is-invalid':!!gorup && !!gorup.touched && !gorup.valid}" id="uername"
+            formControlName="username" />
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+      </form>
+    </div>
   </div>
-</div>
+</main>

@@ -1,1 +1,8 @@
-<p>search works!</p>
+<form class="row pb-3">
+    <div class="col-12">
+        <h5>Search your favorit books</h5>
+        <input type="text" class="form-control form-control-lg" [(ngModel)]="searchTerm" name="search">
+    </div>
+</form>
+
+<ba-book-list [books]="book$ | async"></ba-book-list>

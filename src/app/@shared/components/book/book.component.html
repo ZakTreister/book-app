@@ -1,1 +1,15 @@
-<p>book works!</p>
+<div class="card">
+    <img (error)="image=null" *ngIf="!!image;else imgPlaceholder" [src]="image" class="card-img-top m-auto" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{title | subStr:30}}</h5>
+        <p class="card-text" *ngIf="!!auther && !!auther.length">Authers: {{auther | subStr:20}}</p>
+    </div>
+    <div class="card-footer">
+        <button href="#" class="btn btn-block btn-success">Wishlist</button>
+        <button href="#" class="btn btn-block btn-info">Details</button>
+    </div>
+</div>
+
+<ng-template #imgPlaceholder>
+    <div class="card-img-top m-auto bg-light"></div>
+</ng-template>

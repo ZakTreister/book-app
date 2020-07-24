@@ -23,4 +23,9 @@ export class AccountService {
     this.user = username;
     this.router.navigateByUrl('/app')
   }
+
+  public logout() {
+    this.user = '';
+    this.router.navigate(['/'])
+  }
 }

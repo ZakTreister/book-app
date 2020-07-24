@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AccountService } from 'src/app/@shared/services/account.service'
 @Component({
@@ -6,7 +6,8 @@ import { AccountService } from 'src/app/@shared/services/account.service'
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, AfterViewInit {
+  @ViewChild('input') public input: ElementRef<HTMLInputElement>;
 
   public gorup: FormGroup = this.fb.group({
     'username': this.fb.control(null, Validators.required)
@@ -14,6 +15,9 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
     private account: AccountService) { }
+  ngAfterViewInit(): void {
+    this.input.nativeElement.focus();
+  }
 
   ngOnInit(): void {
   }

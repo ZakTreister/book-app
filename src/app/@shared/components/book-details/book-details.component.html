@@ -1,5 +1,8 @@
 <div class="modal-header" *ngIf="!!title">
     <h4>{{title}}</h4>
+    <button type="button" class="close" (click)="close()">
+        <span>&times;</span>
+    </button>
 </div>
 <div class="modal-body" *ngIf="!!book">
     <img *ngIf="image" (error)="image=null" [src]="image" alt="" class="m-auto">

@@ -47,7 +47,8 @@ export class BookComponent implements OnInit {
     this.bookService.getBookById(this.book.id).subscribe(book=>{
 
       this.modal = this.modalService.open(BookDetailsComponent, {
-        size: 'lg'
+        size: 'lg',
+        
       });
       this.modal.componentInstance.book = book;
     })

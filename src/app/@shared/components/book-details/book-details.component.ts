@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FullBook, VolumeInfo, SaleInfo } from '../../models/full-book';
 import { CurrencyPipe } from '@angular/common';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'ba-book-details',
@@ -51,9 +52,16 @@ export class BookDetailsComponent implements OnInit {
     this._book = fullBook;
   };
 
-  constructor(private currency: CurrencyPipe) { }
+  constructor(private currency: CurrencyPipe,
+    public activeModal: NgbActiveModal) {
+      
+     }
 
   ngOnInit(): void {
+  }
+
+  close(){
+    this.activeModal.close()
   }
 
 }

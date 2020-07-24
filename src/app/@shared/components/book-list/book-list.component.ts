@@ -15,4 +15,7 @@ export class BookListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public ngForTrackBy =  (index: number, item: Book) => item.id;
+
+
 }

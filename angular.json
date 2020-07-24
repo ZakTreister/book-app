@@ -125,8 +125,13 @@
               "devServerTarget": "book-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "book-app"
 }

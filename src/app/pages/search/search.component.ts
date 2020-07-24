@@ -29,23 +29,21 @@ export class SearchComponent implements OnInit {
   public get searchTerm() {
     return this._state.q;
   }
-  public get page() {
-    let page = (this._state.startIndex / this._state.maxResults) + 1;
-    return page;
-  }
 
   public set searchTerm(q: string) {
     this._set({ q });
   }
+
+  public get page() {
+    let page = (this._state.startIndex / this._state.maxResults) + 1;
+    return page;
+  }
+  
   public set page(page: number) {
     let startIndex = (page - 1) * this._state.maxResults;
     this._set({ startIndex });
   }
 
-  private _set(patch: Partial<State>) {
-    Object.assign(this._state, patch);
-    this.searchSubject.next(this._state);
-  }
 
   public book$: Observable<Book[]> = this.searchSubject.pipe(
     debounceTime(300),
@@ -59,6 +57,11 @@ export class SearchComponent implements OnInit {
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
+  }
+
+  private _set(patch: Partial<State>) {
+    Object.assign(this._state, patch);
+    this.searchSubject.next(this._state);
   }
 
 }
